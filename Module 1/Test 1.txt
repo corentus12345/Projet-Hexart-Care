@@ -1,3 +1,4 @@
 Étape 1
 Pour réaliser le circuit on va se servir d’un schéma donné dans le projet
 
+Le schéma est réaliser est comme la LED s’allume il marche mais le programme donné ci dessous ne marche que sur Mac
