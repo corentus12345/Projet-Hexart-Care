@@ -1,0 +1,1 @@
+Avec Keryanne on travail sur les fonction pour pouvoir autant les appeller sur Arduino que les utiliser pour mon module.
