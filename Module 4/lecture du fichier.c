@@ -2,31 +2,34 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define DELIM ";"
 
-int main(void)
+int main(int argc, const char * argv[])
 {
-	FILE *fichier = NULL;
-	
-	fichier = fopen("bpm.csv", "r");
+    FILE* fichier = NULL;
+    int i;
+    char tableau[100][28];
+    int battement[20];
+    int temps[20] ;
 
-	char tableau[100][100];
 
-	if (fichier != NULL)
-	{
-		// Lecture Possible
-		for (int i = 0; i < 2; i++)
-		{
-			fscanf(fichier, "%s", &tableau[i]);
-		}
-		fclose(fichier);
-	}
-	else 
-	{
-		//Lecture Impossible
-		printf("La lecture du fichier est Impossible");
-	}
-	printf("%s\n%s", tableau[0], tableau[1]);
+    fichier = fopen("Battements.csv", "r");
 
-	return 0;
+    if (fichier != NULL)
+    {
+       for(i = 0; i <10; i++)
+       {
+       fscanf(fichier, "%s", tableau[i]);
+
+       battement[i]=strtok(tableau[i],";");
+       temps[i]=strtok(NULL,";");
+       printf("%s\n",temps[i] );//lignes printf pour verifier si les variables sont bien stockes
+       printf("%s\n",battement[i] );
+       }
+        fclose(fichier);
+    }
+
+    return 0;
 }
+
+
+
