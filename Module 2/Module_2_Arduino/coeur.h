@@ -1,5 +1,5 @@
-#ifndef coeur.h
-#défine coeur.h
+#ifndef COEUR_H_INCLUDED
+#défine COEUR_H_INCLUDED
 
 int Battement (int i,int compteur,float wait,int Pouls,int LEDs);
 int Light (int i,int n,float wait,int Pouls,int Sortie,int compteur);
