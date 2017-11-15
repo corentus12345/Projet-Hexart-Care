@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.6">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="monneryr"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2017-11-14 03:36:22 "/>
+        <attribute name="created" value="bW9ubmVyeXI7IE1TSTsgMjAxNy0xMS0xNDsgMTE6NDI6MzQgOyAyMzM4"/>
+        <attribute name="edited" value="bW9ubmVyeXI7IE1TSTsgMjAxNy0xMS0xNDsgMDM6MzY6MjIgOyAyMzM5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="pouls" type="Integer" array="False" size=""/>
+            <declare name="sortie" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="compteur" type="Integer" array="False" size=""/>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <declare name="wait" type="Integer" array="False" size=""/>
+            <assign variable="n" expression="2"/>
+            <assign variable="compteur" expression="0"/>
+            <input variable="pouls"/>
+            <if expression="pouls &gt; 0">
+                <then>
+                    <while expression="compteur != pouls">
+                        <for variable="n" start="2" end="9" direction="inc" step="1">
+                            <for variable="i" start="1" end="10" direction="inc" step="n">
+                                <assign variable="sortie" expression="i"/>
+                                <assign variable="compteur" expression="compteur + 1"/>
+                                <if expression="compteur = pouls">
+                                    <then>
+                                        <assign variable="i" expression="11"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </for>
+                            <assign variable="wait" expression="60 / pouls"/>
+                            <assign variable="sortie" expression="0"/>
+                            <if expression="compteur = pouls">
+                                <then>
+                                    <assign variable="n" expression="11"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </for>
+                        <assign variable="n" expression="10"/>
+                        <assign variable="sortie" expression="1"/>
+                    </while>
+                </then>
+                <else>
+                    <output expression="&quot;Erreur&quot;"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

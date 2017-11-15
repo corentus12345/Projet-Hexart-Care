@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.6">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="monneryr"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2017-11-14 03:45:46 "/>
+        <attribute name="created" value="bW9ubmVyeXI7IE1TSTsgMjAxNy0xMS0xNDsgMDE6MTI6MjMgOyAyMzMy"/>
+        <attribute name="edited" value="bW9ubmVyeXI7IE1TSTsgMjAxNy0xMS0xNDsgMDM6NDU6NDYgOyAyMzQ1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="pouls" type="Integer" array="False" size=""/>
+            <declare name="compteur" type="Integer" array="False" size=""/>
+            <declare name="sortie" type="Integer" array="True" size="10"/>
+            <declare name="wait" type="Real" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="compteur" expression="0"/>
+            <input variable="pouls"/>
+            <if expression="pouls &gt; 0">
+                <then>
+                    <while expression="compteur != pouls">
+                        <for variable="i" start="1" end="10" direction="inc" step="1">
+                            <assign variable="sortie[i]" expression="1"/>
+                            <assign variable="wait" expression="60 / pouls"/>
+                            <assign variable="sortie[i]" expression="0"/>
+                            <assign variable="compteur" expression="compteur + 1"/>
+                            <if expression="compteur = pouls">
+                                <then>
+                                    <assign variable="i" expression="11"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </for>
+                    </while>
+                </then>
+                <else>
+                    <output expression="&quot;Erreur&quot;"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
